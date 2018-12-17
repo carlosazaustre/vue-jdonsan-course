@@ -1,24 +1,19 @@
-// Global Component register
-Vue.component('hello-world', {
-  template: `
-    <h1>Hello, world! My name is {{ name }}</h1>
-  `,
+Vue.component('button-counter', {
+  template: `<button v-on:click='add'>Counter: {{ counter }}</button>`,
+
   data () {
     return {
-      name: 'Carlos'
+      counter: 0
+    }
+  },
+
+  methods: {
+    add () {
+      this.counter++
     }
   }
 })
 
 const app = new Vue({
-  el: '#my-app',
-  // components: { HelloWorld } -- // Locally Component register
-  data: {
-    text: 'My first message on Vue'
-  }
+  el: '#my-app'
 })
-
-// app.$mount('#my-app')
-setTimeout(() => {
-  app.text = 'Message changed!'
-}, 3000)
