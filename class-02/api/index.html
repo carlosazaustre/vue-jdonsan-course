@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get and Show Data from API</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="orderByTitle">Order by title</button>
+    <button @click="orderById">Order by ID</button>
+    <button @click="defaultOrder">Default Order</button>
+
+    <ul v-if="posts">
+      <template v-for="post in posts">
+        <li>
+          <strong>{{ post.title }}</strong><br>
+          <em>{{ post.body }}</em>
+          <hr/>
+        </li>
+      </template>
+    </ul>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
